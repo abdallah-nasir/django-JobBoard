@@ -27,13 +27,12 @@ Blog:
     -search
     -comment
     -recent post
-    
-    
+     
 Contact:
-        -home
-        
-        
-Login
+
+Home:
+
+Login:
         
 
     
