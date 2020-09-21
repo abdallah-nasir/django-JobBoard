@@ -11,15 +11,18 @@ from django.db import models
 
     '''
 
+
+ #----------this is what job contains----------------------#
 JOB_TYPE=(
 ("Full Time","Full Time"),
 ("Part Time","Part Time"),
 )
 
-class job(models.Model):    #table=class
+
+class job(models.Model):    #table=class       
+   
     title=models.CharField(max_length=100) #column
-    
-   # location
+    # location
 
     job_type=models.CharField(max_length=15,choices=JOB_TYPE)
 
@@ -33,9 +36,23 @@ class job(models.Model):    #table=class
 
     experiance=models.IntegerField(default=1)
 
-
+    #category has a realationship with a class
+    category=models.ForeignKey('Category',on_delete=models.CASCADE)
 
     def __str__(self):        #if you want yo show the title
-         return self.title
+        return self.title
+
+
+class Category(models.Model):   
+
+    name=models.CharField(max_length=25)
+
+        
+    def __str__(self):        #if you want yo show the name
+            return self.name
+
+   
+
+
 
 
